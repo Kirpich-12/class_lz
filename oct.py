@@ -7,6 +7,7 @@ def func():#выполнение задания
     print(f'Радиус вписсаной в восьмиугольник окружности {oct.rad_vpis()}')
     oct.s()
     oct.paint()
+    oct.per()
 
 
 def main():
