@@ -1,4 +1,5 @@
 #Class octagon whith сalculations and drawing
+#Kirpich aka Deros. All rights reserved.
 #============================================
 from math import sqrt, pi, cos, sin
 import matplotlib.pyplot as plt 
@@ -16,9 +17,17 @@ class Octagon:
         rad = sqrt((1 + sqrt(2))/((1 + sqrt(2)) - 1)) * self.st
         return rad
     
+    def s_opis(self):
+        s = pi * (self.rad_opis ** 2)
+        return s
+  
     def rad_vpis(self) -> float: #радиус вписанной окружности
         rad = (self.st / 2)* (1 + sqrt(2))
         return rad
+    
+    def s_opis(self):
+        s = pi * (self.rad_vpis ** 2)
+        return s
         
     def s(self):#площодь восьмиугольника
         s = 2 * (self.st ** 2) * (sqrt(2) + 1)
@@ -43,7 +52,7 @@ class Octagon:
     
     def paint(self):# Рисование фигур
         #Описанныая около восьмиугольника окружность
-        circle1 = plt.Circle((0, 0 ), self.rad_opis(), color='r', fill=False)
+        circle1 = plt.Circle((0, 0 ), self.rad_opis(), color='b', fill=False)
         ax=plt.gca()
         ax.add_patch(circle1)
 
@@ -54,7 +63,7 @@ class Octagon:
 
         #Восьмиугольник построенный по вершинам
         x,y = self.peaks()
-        plt.plot(x, y)
+        plt.plot(x, y, color = 'g')
 
         #Отображение
         plt.axis('scaled')
